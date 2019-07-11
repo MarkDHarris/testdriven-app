@@ -9,6 +9,7 @@
             "type": "python",
             "request": "launch",
             "module": "flask",
+            "envFile": "${workspaceFolder}/.env",
             "env": {
                 "FLASK_APP": "${workspaceRoot}/services/users/project/__init__.py",
                 "FLASK_ENV": "development",

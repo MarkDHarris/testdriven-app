@@ -1,3 +1,4 @@
 {
-    "python.pythonPath": "services/users/env/bin/python"
+    "python.pythonPath": "services/users/env/bin/python",
+    "python.envFile": "${workspaceFolder}/.env"
 }
