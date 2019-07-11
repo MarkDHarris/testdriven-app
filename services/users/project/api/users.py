@@ -33,7 +33,8 @@ class UsersList(Resource):
                 response_object['message'] = f'{email} was added!'
                 return response_object, 201
             else:
-                response_object['message'] = 'Sorry. That email already exists.'
+                response_object['message'] = \
+                    'Sorry. That email already exists.'
                 return response_object, 400
         except exc.IntegrityError:
             db.session.rollback()
@@ -48,6 +49,7 @@ class UsersList(Resource):
             }
         }
         return response_object, 200
+
 
 class Users(Resource):
     def get(self, user_id):
@@ -74,12 +76,13 @@ class Users(Resource):
         except ValueError:
             return response_object, 404
 
+
 class UsersPing(Resource):
     def get(self):
         return {
-        'status': 'success',
-        'message': 'pong!'
-    }
+            'status': 'success',
+            'message': 'pong!'
+        }
 
 
 api.add_resource(UsersPing, '/users/ping')
